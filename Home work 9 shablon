@@ -1,0 +1,201 @@
+
+1 задание 
+using System;
+public abstract class Beverage
+{
+    public abstract string GetDescription();
+    public abstract double Cost();
+}
+
+// 2. Классы напитков, реализующие интерфейс Beverage
+public class Espresso : Beverage
+{
+    public override string GetDescription() => "Espresso";
+
+    public override double Cost() => 1.99;
+}
+
+public class Tea : Beverage
+{
+    public override string GetDescription() => "Tea";
+
+    public override double Cost() => 1.49;
+}
+
+public class Latte : Beverage
+{
+    public override string GetDescription() => "Latte";
+
+    public override double Cost() => 2.49;
+}
+
+public class Mocha : Beverage
+{
+    public override string GetDescription() => "Mocha";
+
+    public override double Cost() => 2.99;
+}
+
+// 3. Абстрактный класс-декоратор BeverageDecorator
+public abstract class BeverageDecorator : Beverage
+{
+    protected Beverage beverage;
+
+    public BeverageDecorator(Beverage beverage)
+    {
+        this.beverage = beverage;
+    }
+
+    public override string GetDescription() => beverage.GetDescription();
+
+    public override double Cost() => beverage.Cost();
+}
+
+// 4. Конкретные классы-декораторы для различных добавок
+public class Milk : BeverageDecorator
+{
+    public Milk(Beverage beverage) : base(beverage) { }
+
+    public override string GetDescription() => beverage.GetDescription() + ", Milk";
+
+    public override double Cost() => beverage.Cost() + 0.30;
+}
+
+public class Sugar : BeverageDecorator
+{
+    public Sugar(Beverage beverage) : base(beverage) { }
+
+    public override string GetDescription() => beverage.GetDescription() + ", Sugar";
+
+    public override double Cost() => beverage.Cost() + 0.10;
+}
+
+public class WhippedCream : BeverageDecorator
+{
+    public WhippedCream(Beverage beverage) : base(beverage) { }
+
+    public override string GetDescription() => beverage.GetDescription() + ", Whipped Cream";
+
+    public override double Cost() => beverage.Cost() + 0.50;
+}
+
+public class Syrup : BeverageDecorator
+{
+    public Syrup(Beverage beverage) : base(beverage) { }
+
+    public override string GetDescription() => beverage.GetDescription() + ", Syrup";
+
+    public override double Cost() => beverage.Cost() + 0.40;
+}
+
+// 6. Клиентский код
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Создаем напиток (Espresso) и добавляем к нему различные декораторы
+        Beverage beverage = new Espresso();
+        beverage = new Milk(beverage);
+        beverage = new Sugar(beverage);
+        beverage = new WhippedCream(beverage);
+
+        Console.WriteLine("Description: " + beverage.GetDescription());
+        Console.WriteLine("Total Cost: $" + beverage.Cost());
+
+        // Пример с другим напитком и другими добавками
+        Beverage beverage2 = new Latte();
+        beverage2 = new Syrup(beverage2);
+        beverage2 = new WhippedCream(beverage2);
+
+        Console.WriteLine("\nDescription: " + beverage2.GetDescription());
+        Console.WriteLine("Total Cost: $" + beverage2.Cost());
+    }
+}
+2 задание 
+using System;
+
+// 1. Интерфейс IPaymentProcessor с методом ProcessPayment
+public interface IPaymentProcessor
+{
+    void ProcessPayment(double amount);
+}
+
+// 2. Класс PayPalPaymentProcessor, реализующий IPaymentProcessor
+public class PayPalPaymentProcessor : IPaymentProcessor
+{
+    public void ProcessPayment(double amount)
+    {
+        Console.WriteLine($"Processing payment of ${amount} via PayPal.");
+    }
+}
+
+// 3. Сторонний класс StripePaymentService с методом MakeTransaction
+public class StripePaymentService
+{
+    public void MakeTransaction(double totalAmount)
+    {
+        Console.WriteLine($"Processing transaction of ${totalAmount} via Stripe.");
+    }
+}
+
+// 4. Класс адаптера StripePaymentAdapter, реализующий IPaymentProcessor
+public class StripePaymentAdapter : IPaymentProcessor
+{
+    private readonly StripePaymentService _stripePaymentService;
+
+    public StripePaymentAdapter(StripePaymentService stripePaymentService)
+    {
+        _stripePaymentService = stripePaymentService;
+    }
+
+    public void ProcessPayment(double amount)
+    {
+        _stripePaymentService.MakeTransaction(amount);
+    }
+}
+
+// Дополнительный сторонний сервис: SquarePaymentService с методом ExecutePayment
+public class SquarePaymentService
+{
+    public void ExecutePayment(double amount)
+    {
+        Console.WriteLine($"Processing payment of ${amount} via Square.");
+    }
+}
+
+// Адаптер для SquarePaymentService
+public class SquarePaymentAdapter : IPaymentProcessor
+{
+    private readonly SquarePaymentService _squarePaymentService;
+
+    public SquarePaymentAdapter(SquarePaymentService squarePaymentService)
+    {
+        _squarePaymentService = squarePaymentService;
+    }
+
+    public void ProcessPayment(double amount)
+    {
+        _squarePaymentService.ExecutePayment(amount);
+    }
+}
+
+// 5. Клиентский код
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Работа с PayPal
+        IPaymentProcessor paypalProcessor = new PayPalPaymentProcessor();
+        paypalProcessor.ProcessPayment(100.0);
+
+        // Работа с Stripe через адаптер
+        StripePaymentService stripeService = new StripePaymentService();
+        IPaymentProcessor stripeProcessor = new StripePaymentAdapter(stripeService);
+        stripeProcessor.ProcessPayment(200.0);
+
+        // Работа с Square через адаптер
+        SquarePaymentService squareService = new SquarePaymentService();
+        IPaymentProcessor squareProcessor = new SquarePaymentAdapter(squareService);
+        squareProcessor.ProcessPayment(150.0);
+    }
+}
