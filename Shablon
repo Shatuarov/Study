@@ -213,3 +213,117 @@ public class program
         LogisticsClient.ProcessDelivery();
     }
 }
+
+
+1 задание 
+using System;
+public abstract class Beverage
+{
+    public abstract string GetDescription();
+    public abstract double Cost();
+}
+
+// 2. Классы напитков, реализующие интерфейс Beverage
+public class Espresso : Beverage
+{
+    public override string GetDescription() => "Espresso";
+
+    public override double Cost() => 1.99;
+}
+
+public class Tea : Beverage
+{
+    public override string GetDescription() => "Tea";
+
+    public override double Cost() => 1.49;
+}
+
+public class Latte : Beverage
+{
+    public override string GetDescription() => "Latte";
+
+    public override double Cost() => 2.49;
+}
+
+public class Mocha : Beverage
+{
+    public override string GetDescription() => "Mocha";
+
+    public override double Cost() => 2.99;
+}
+
+// 3. Абстрактный класс-декоратор BeverageDecorator
+public abstract class BeverageDecorator : Beverage
+{
+    protected Beverage beverage;
+
+    public BeverageDecorator(Beverage beverage)
+    {
+        this.beverage = beverage;
+    }
+
+    public override string GetDescription() => beverage.GetDescription();
+
+    public override double Cost() => beverage.Cost();
+}
+
+// 4. Конкретные классы-декораторы для различных добавок
+public class Milk : BeverageDecorator
+{
+    public Milk(Beverage beverage) : base(beverage) { }
+
+    public override string GetDescription() => beverage.GetDescription() + ", Milk";
+
+    public override double Cost() => beverage.Cost() + 0.30;
+}
+
+public class Sugar : BeverageDecorator
+{
+    public Sugar(Beverage beverage) : base(beverage) { }
+
+    public override string GetDescription() => beverage.GetDescription() + ", Sugar";
+
+    public override double Cost() => beverage.Cost() + 0.10;
+}
+
+public class WhippedCream : BeverageDecorator
+{
+    public WhippedCream(Beverage beverage) : base(beverage) { }
+
+    public override string GetDescription() => beverage.GetDescription() + ", Whipped Cream";
+
+    public override double Cost() => beverage.Cost() + 0.50;
+}
+
+public class Syrup : BeverageDecorator
+{
+    public Syrup(Beverage beverage) : base(beverage) { }
+
+    public override string GetDescription() => beverage.GetDescription() + ", Syrup";
+
+    public override double Cost() => beverage.Cost() + 0.40;
+}
+
+// 6. Клиентский код
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Создаем напиток (Espresso) и добавляем к нему различные декораторы
+        Beverage beverage = new Espresso();
+        beverage = new Milk(beverage);
+        beverage = new Sugar(beverage);
+        beverage = new WhippedCream(beverage);
+
+        Console.WriteLine("Description: " + beverage.GetDescription());
+        Console.WriteLine("Total Cost: $" + beverage.Cost());
+
+        // Пример с другим напитком и другими добавками
+        Beverage beverage2 = new Latte();
+        beverage2 = new Syrup(beverage2);
+        beverage2 = new WhippedCream(beverage2);
+
+        Console.WriteLine("\nDescription: " + beverage2.GetDescription());
+        Console.WriteLine("Total Cost: $" + beverage2.Cost());
+    }
+}
