@@ -1,0 +1,148 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="24.8.6">
+  <diagram name="Страница — 1" id="1m1NpB-GyHEZhV8FTv72">
+    <mxGraphModel dx="1290" dy="557" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2n75bmOk_IxF2vod89e_-1" value="Book" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="120" width="160" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-2" value="+ Title: &lt;span class=&quot;hljs-keyword&quot;&gt;string&lt;/span&gt;&lt;br/&gt;+ Author: &lt;span class=&quot;hljs-keyword&quot;&gt;string&lt;/span&gt;&lt;br/&gt;+ ISBN: &lt;span class=&quot;hljs-keyword&quot;&gt;string&lt;/span&gt;&lt;br/&gt;+ Status: &lt;span class=&quot;hljs-keyword&quot;&gt;bool&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="2n75bmOk_IxF2vod89e_-1">
+          <mxGeometry y="26" width="160" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="2n75bmOk_IxF2vod89e_-1">
+          <mxGeometry y="90" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-4" value="+ &lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;ChangeStatus&lt;/span&gt;(&lt;span class=&quot;hljs-attr&quot;&gt;newStatus&lt;/span&gt;: &lt;span class=&quot;hljs-keyword&quot;&gt;bool&lt;/span&gt;)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="2n75bmOk_IxF2vod89e_-1">
+          <mxGeometry y="98" width="160" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-6" value="Reader" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="40" width="160" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-7" value="+ Name: &lt;span class=&quot;hljs-keyword&quot;&gt;string&lt;/span&gt;&amp;nbsp;&lt;div&gt;+ RentedBooks: List&amp;lt;Book&amp;gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="2n75bmOk_IxF2vod89e_-6">
+          <mxGeometry y="26" width="160" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="2n75bmOk_IxF2vod89e_-6">
+          <mxGeometry y="90" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-9" value="+ &lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;RentBook&lt;/span&gt;(&lt;span class=&quot;hljs-attr&quot;&gt;book&lt;/span&gt;: Book)&amp;nbsp;&lt;div&gt;+ &lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;ReturnBook&lt;/span&gt;(&lt;span class=&quot;hljs-attr&quot;&gt;book&lt;/span&gt;: Book)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="2n75bmOk_IxF2vod89e_-6">
+          <mxGeometry y="98" width="160" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-10" value="Librarian" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="120" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-11" value="+ Name: &lt;span class=&quot;hljs-keyword&quot;&gt;string&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="2n75bmOk_IxF2vod89e_-10">
+          <mxGeometry y="26" width="210" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-12" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="2n75bmOk_IxF2vod89e_-10">
+          <mxGeometry y="60" width="210" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-13" value="+ &lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;AddBook&lt;/span&gt;(&lt;span class=&quot;hljs-attr&quot;&gt;book&lt;/span&gt;: Book, &lt;span class=&quot;hljs-attr&quot;&gt;library&lt;/span&gt;: Library)&lt;br/&gt;+ &lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;RemoveBook&lt;/span&gt;(&lt;span class=&quot;hljs-attr&quot;&gt;book&lt;/span&gt;: Book, &lt;span class=&quot;hljs-attr&quot;&gt;library&lt;/span&gt;: Library)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="2n75bmOk_IxF2vod89e_-10">
+          <mxGeometry y="68" width="210" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-15" value="Library" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="380" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-16" value="+ Books: List&amp;lt;Book&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="2n75bmOk_IxF2vod89e_-15">
+          <mxGeometry y="26" width="160" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-17" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="2n75bmOk_IxF2vod89e_-15">
+          <mxGeometry y="60" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-18" value="+ &lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;SearchBooks&lt;/span&gt;(&lt;span class=&quot;hljs-attr&quot;&gt;query&lt;/span&gt;: &lt;span class=&quot;hljs-keyword&quot;&gt;string&lt;/span&gt;)&amp;nbsp;&lt;div&gt;+ &lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;DisplayBooks&lt;/span&gt;()&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="2n75bmOk_IxF2vod89e_-15">
+          <mxGeometry y="68" width="160" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-19" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2n75bmOk_IxF2vod89e_-15" target="2n75bmOk_IxF2vod89e_-2">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="330" y="290" as="sourcePoint" />
+            <mxPoint x="490" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-22" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="2n75bmOk_IxF2vod89e_-7" target="2n75bmOk_IxF2vod89e_-2">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="330" y="230" as="sourcePoint" />
+            <mxPoint x="490" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-23" value="" style="endArrow=block;startArrow=block;endFill=1;startFill=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2n75bmOk_IxF2vod89e_-16" target="2n75bmOk_IxF2vod89e_-11">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="330" y="230" as="sourcePoint" />
+            <mxPoint x="490" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-25" value="UI (Пользовательский интерфейс)" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="640" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-26" value="+Attribute1&#xa;+Attribute2&#xa;+Attribute3" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="2n75bmOk_IxF2vod89e_-25">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-27" value="HotelService&lt;div&gt;&amp;nbsp;(Сервис отелей)&lt;/div&gt;" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="570" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-28" value="+Attribute1&#xa;+Attribute2&#xa;+Attribute3" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="2n75bmOk_IxF2vod89e_-27">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2n75bmOk_IxF2vod89e_-31" target="2n75bmOk_IxF2vod89e_-33">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="670" y="790" />
+              <mxPoint x="670" y="530" />
+              <mxPoint x="100" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-31" value="BookingService&lt;div&gt;&amp;nbsp;(Сервис бронирования)&lt;/div&gt;" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="760" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-32" value="+Attribute1&#xa;+Attribute2&#xa;+Attribute3" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="2n75bmOk_IxF2vod89e_-31">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-33" value="PaymentService (Сервис оплаты):" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="550" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-34" value="+Attribute1&#xa;+Attribute2&#xa;+Attribute3" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="2n75bmOk_IxF2vod89e_-33">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-35" value="NotificationService (Сервис уведомлений):" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="790" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-36" value="+Attribute1&#xa;+Attribute2&#xa;+Attribute3" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="2n75bmOk_IxF2vod89e_-35">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-37" value="UserManagementService" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="840" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-38" value="+Attribute1&#xa;+Attribute2&#xa;+Attribute3" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="2n75bmOk_IxF2vod89e_-37">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="2n75bmOk_IxF2vod89e_-26" target="2n75bmOk_IxF2vod89e_-37">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.018;entryY=0.345;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2n75bmOk_IxF2vod89e_-26" target="2n75bmOk_IxF2vod89e_-27">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="420" y="690" />
+              <mxPoint x="420" y="611" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.438;entryY=-0.005;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2n75bmOk_IxF2vod89e_-26" target="2n75bmOk_IxF2vod89e_-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.425;entryY=1.009;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2n75bmOk_IxF2vod89e_-32" target="2n75bmOk_IxF2vod89e_-36">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="520" y="1010" />
+              <mxPoint x="98" y="1010" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2n75bmOk_IxF2vod89e_-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.383;entryY=1.009;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2n75bmOk_IxF2vod89e_-31" target="2n75bmOk_IxF2vod89e_-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
